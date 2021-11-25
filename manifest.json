@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Better Membean",
+  "description": "",
+"version": "1.0",
+	
+	  "browser_action": {
+      "default_popup": "popup.html",
+    "default_icon": "images/Icon.png"
+  },
+	
+   
+    "content_scripts": [
+      {
+        "matches": ["*://membean.com/training_sessions*"],
+    
+        "js": ["betterMembean.js"]
+      }
+    
+	
+	]
+	
+	
+  
+   }

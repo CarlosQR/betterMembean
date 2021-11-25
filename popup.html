@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+<h1>Better Membean</h1>
+
+
+<label for="backgroundColorFrontAsk">Escoje el color para el small square en el medio de membean:</label><br>
+<input type="color" id="backgroundColorFrontAsk" name="backgroundColorFrontAsk" value=""><br>
+
+
+<label for="backgroundImageBackAsk">Escribe el url para el bacground image :</label><br>
+<input type="text" id="backgroundImageBackAsk" name="backgroundImageBackAsk" value=""><br>
+
+
+<label for="topBarColorMaxAsk">Escoje el color para el header </label><br>
+<input type="color" id="topBarColorMaxAsk" name="topBarColorMaxAsk" value=""><br>
+
+
+<label for="topBarColorMinAsk">Escoje el color para los bordes</label><br>
+<input type="color" id="topBarColorMinAsk" name="topBarColorMinAsk" value=""><br>
+
+<br>
+  <input type="submit" onclick="Start()">
+  <script>
+
+
+    function Start(){
+console.log(document.getElementById("backgroundColorFrontAsk"))
+
+localStorage.setItem("backgroundColorFront",document.getElementById("backgroundColorFrontAsk").value);
+localStorage.setItem("backgroundImageBack", document.getElementById("backgroundImageBackAsk").value);
+localStorage.setItem("topBarColorMax",document.getElementById("topBarColorMaxAsk").value );
+localStorage.setItem("topBarColorMin", document.getElementById("topBarColorMinAsk").value);
+
+}
+</script>
+
+
+ 
+  </body>
+
+
+
+</html>
