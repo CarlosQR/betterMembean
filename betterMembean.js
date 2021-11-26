@@ -1,9 +1,14 @@
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.greeting === "hello")
+      sendResponse({farewell: "goodbye"});
+  }
+);
 
-
-
-
-
-
+/*
 var btn = document.createElement("BUTTON");
 document.body.appendChild(btn);
 
@@ -17,7 +22,7 @@ alert("Dale click al icon del chrome extension to create your own theme!!!")
 
 
 
-
+/*
 
     }
 },1000);
