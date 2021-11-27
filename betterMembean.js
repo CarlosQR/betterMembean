@@ -1,12 +1,37 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    if (request.greeting === "hello")
-      sendResponse({farewell: "goodbye"});
+    console.log(request.backgroundColorFront)
   }
 );
+
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(request.backgroundImageBack)
+  }
+);
+
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(request.topBarColorMax)
+  }
+);
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(request.topBarColorMin)
+  }
+);
+
+
+/*
+localStorage.setItem("backgroundColorFront",document.getElementById("backgroundColorFrontAsk").value);
+localStorage.setItem("backgroundImageBack", document.getElementById("backgroundImageBackAsk").value);
+localStorage.setItem("topBarColorMax",document.getElementById("topBarColorMaxAsk").value );
+localStorage.setItem("topBarColorMin", document.getElementById("topBarColorMinAsk").value);
+*/
+
 
 /*
 var btn = document.createElement("BUTTON");
@@ -19,8 +44,6 @@ setInterval(function(){
 alert("Bienvenido a Better Membean!!-Por Carlos Q")
 alert("Dale click al icon del chrome extension to create your own theme!!!")
 */
-
-
 
 /*
 
