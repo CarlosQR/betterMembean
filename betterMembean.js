@@ -1,28 +1,41 @@
+
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(request.backgroundColorFront)
+    localStorage.setItem("themeArray",request.themeArray);
+
+   
+  }
+);
+
+console.log("Funciono")
+/*
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+
+
+    localStorage.setItem("backgroundColorFront",request.backgroundColorFront);
+  
   }
 );
 
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(request.backgroundImageBack)
+    localStorage.setItem("backgroundImageBack", request.backgroundImageBack);
+ 
   }
 );
 
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(request.topBarColorMax)
+
+    localStorage.setItem("topBarColorMax",request.topBarColorMax );
+   
   }
 );
 
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    console.log(request.topBarColorMin)
-  }
-);
+*/
 
 
 /*
@@ -33,26 +46,28 @@ localStorage.setItem("topBarColorMin", document.getElementById("topBarColorMinAs
 */
 
 
-/*
-var btn = document.createElement("BUTTON");
-document.body.appendChild(btn);
 
+
+/*
 setInterval(function(){ 
 
     if(localStorage.getItem("backgroundColorFront") == null){
-/*
+
 alert("Bienvenido a Better Membean!!-Por Carlos Q")
 alert("Dale click al icon del chrome extension to create your own theme!!!")
-*/
 
-/*
 
     }
 },1000);
-var backgroundColorFrontLs= localStorage.getItem("backgroundColorFront");
-var backgroundImageBackLs = localStorage.getItem("backgroundImageBack");
-var topBarColorMaxLs = localStorage.getItem("topBarColorMax");
-var topBarColorMinLS = localStorage.getItem("topBarColorMin");
+*/
+var themeArray = localStorage.getItem("themeArray")
+var themeArray = themeArray.split(",")
+
+
+var backgroundColorFrontLs= themeArray[0]
+var backgroundImageBackLs = themeArray[1]
+var topBarColorMaxLs = themeArray[2]
+var topBarColorMinLS = themeArray[3]
 
 
 var backgroundColorFront = document.getElementsByClassName('single-column-layout')[0];
@@ -68,8 +83,12 @@ backgroundColorFront.style.setProperty ('background-color', backgroundColorFront
  let topBarColorMin = document.getElementsByClassName('screen-width')[0];
  topBarColorMin.style.setProperty ('border-bottom-color', topBarColorMinLS, 'important');
 //#e137dc
+backgroundColorFront.style.setProperty ('border-color', topBarColorMinLS, 'important');
 
 
+
+//themeArray = #28359d,https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg,#000000,#e137dc
+ 
 
 
 
