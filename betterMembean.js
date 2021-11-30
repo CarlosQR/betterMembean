@@ -2,6 +2,7 @@
 setInterval(function(){
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+       sendResponse({farewell: "goodbye"});
     localStorage.setItem("themeArray",request.themeArray);
     console.log("Funciono")
    

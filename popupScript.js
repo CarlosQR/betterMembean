@@ -51,8 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
 console.log("funciona")
 //var themeArray = [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value]
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      
       chrome.tabs.sendMessage(tabs[0].id, {themeArray: [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value]}, function(response) {
-        
+     
+        window.location.href= "popup.html" 
 
 
       });
