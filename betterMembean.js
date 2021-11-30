@@ -1,13 +1,14 @@
 
+setInterval(function(){
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     localStorage.setItem("themeArray",request.themeArray);
-
+    console.log("Funciono")
    
   }
 );
+},1000)
 
-console.log("Funciono")
 /*
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
@@ -49,6 +50,8 @@ localStorage.setItem("topBarColorMin", document.getElementById("topBarColorMinAs
 
 
 /*
+
+
 setInterval(function(){ 
 
     if(localStorage.getItem("backgroundColorFront") == null){
@@ -60,6 +63,7 @@ alert("Dale click al icon del chrome extension to create your own theme!!!")
     }
 },1000);
 */
+
 var themeArray = localStorage.getItem("themeArray")
 var themeArray = themeArray.split(",")
 
