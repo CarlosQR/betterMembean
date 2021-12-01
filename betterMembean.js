@@ -2,10 +2,20 @@
 setInterval(function(){
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-       sendResponse({farewell: "goodbye"});
+    sendResponse({respond: "ummmm"});
+    
+
     localStorage.setItem("themeArray",request.themeArray);
-    console.log("Funciono")
-   
+    var themeArrayLS = localStorage.getItem("themeArray");
+    themeArrayLS = themeArrayLS.split(",")
+    var numLS = themeArrayLS[4]
+    numLS = numLS.toString()
+    console.log(themeArrayLS)
+    console.log(numLS)
+localStorage.setItem("themeArray"+ numLS,request.themeArray);
+
+  
+    
   }
 );
 },1000)
@@ -65,6 +75,15 @@ alert("Dale click al icon del chrome extension to create your own theme!!!")
 },1000);
 */
 
+
+
+
+
+
+
+
+/*
+
 var themeArray = localStorage.getItem("themeArray")
 var themeArray = themeArray.split(",")
 
@@ -92,8 +111,22 @@ backgroundColorFront.style.setProperty ('border-color', topBarColorMinLS, 'impor
 
 
 
+
+
+
+
+
+
+
+
+
+
+*/
+
 //themeArray = #28359d,https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg,#000000,#e137dc
  
+
+
 
 
 
