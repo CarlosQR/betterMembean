@@ -54,7 +54,7 @@ console.log("mhmhm")
 
 
       }
-
+localStorage.setItem("themePfp"+themNum,document.getElementById("backgroundImageBackAsk").value)
   
   console.log("funciona")
   //var themeArray = [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value]
