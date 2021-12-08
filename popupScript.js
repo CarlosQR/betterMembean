@@ -1,39 +1,4 @@
 
-  /*
-localStorage.setItem("backgroundColorFront",document.getElementById("backgroundColorFrontAsk").value);
-localStorage.setItem("backgroundImageBack", document.getElementById("backgroundImageBackAsk").value);
-localStorage.setItem("topBarColorMax",document.getElementById("topBarColorMaxAsk").value );
-localStorage.setItem("topBarColorMin", document.getElementById("topBarColorMinAsk").value);
-
-document.getElementById("themePfp").src= localStorage.getItem("backgroundImageBack")
-    /*
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {backgroundImageBack: document.getElementById("backgroundImageBackAsk").value}, function(response) {
-          
-        });
-      });
-    
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {topBarColorMax: document.getElementById("topBarColorMaxAsk").value}, function(response) {
-          
-        });
-      });
-    
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {topBarColorMin: document.getElementById("topBarColorMinAsk").value}, function(response) {
-          
-        });
-      });
-
-
-
-
-
-    
-
-    });
-  });
-*/
 
 document.addEventListener('DOMContentLoaded', function() {
   var link2 = document.getElementById('plus');
@@ -43,37 +8,114 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var link3 = document.getElementById('test');
+  // onClick's logic below:
+  link3.addEventListener('click', function() {
+    console.log("bruh")
+  });
+});
+
 
 var themePfp 
 var themeNum = localStorage.getItem("themeNum");
 var theme = "";
+
 for (let i = 1; i <= themeNum; i++){
   themePfp = localStorage.getItem("themePfp" + i);
   console.log("themePfp" + i)
   
-  theme = theme + "<img style='border: 0.5px solid white'width ='80px' heigth = '45px' src = '" + themePfp+ "'>"
+  theme = theme + "<img id='"+i+"' style='border: 0.5px solid white; background-repeat: no repeat 'width ='80px' heigth = '45px' src = '" + themePfp+ "'>"
   console.log(themePfp)
   console.log(i)
+  
+
 
 }
+ var themeLoop = setInterval(function(){
+var span = document.getElementById("themes")
+
+if(document.getElementById("themes")== null){
+  clearInterval(span)
+
+}else{
+
+
+}
+}, 1000);
+console.log(document.getElementById('1'))
+
+//===================================1=====================================\\
+
+ 
+document.addEventListener('DOMContentLoaded', function() {
+ 
+  var theme = document.getElementById('1');
+
+
+  // 1
+  setInterval(function(){
+    document.getElementById('1').addEventListener('click', function() {
+  console.log("Like como q funcione souu 1")
+
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {themeNum: "1"}, function(response) {
+          });});
+
+  });
+/*
+  
+    
+   
+*/
+}, 1000)
+
+//2
+setInterval(function(){
+  document.getElementById('2').addEventListener('click', function() {
+console.log("Like como q funcione souu 2")
+
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, {themeNum: "2"}, function(response) {
+        });});
+
+});
+/*
+
+  
+ 
+*/
+}, 1000)
+   })
+  
+        
+
+
+
+
 
 console.log(theme)
-
+x = setInterval(function(){
 if(theme != ""){
+if(document.getElementById("themes") == null ||document.getElementById("themes").innerHTML == '' ){
 
-  //document.getElementById("themes").innerHTML=theme
-  
-  if(document.getElementById("themes") == null){
+  document.getElementById("themes").innerHTML=theme
 
-    setInterval(function(){ 
-
-      document.getElementById("themes").innerHTML=theme
-
-
-     }, 1000);
-  }
+}else{
+console.log("INterval Estoped")
+clearInterval(x)
 
 }
+
+  
+
+}
+
+},10)
+
+
+
+
 
 
 /*

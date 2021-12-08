@@ -17,48 +17,24 @@ localStorage.setItem("themeArray"+ numLS,request.themeArray);
   
     
   }
+
+
 );
 },1000)
-
-/*
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
+var themeNumBM = ""
 
 
-    localStorage.setItem("backgroundColorFront",request.backgroundColorFront);
+setInterval(function(){
+
   
-  }
-);
-
-
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    localStorage.setItem("backgroundImageBack", request.backgroundImageBack);
- 
-  }
-);
-
-
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-
-    localStorage.setItem("topBarColorMax",request.topBarColorMax );
-   
-  }
-);
-
-*/
-
-
-/*
-localStorage.setItem("backgroundColorFront",document.getElementById("backgroundColorFrontAsk").value);
-localStorage.setItem("backgroundImageBack", document.getElementById("backgroundImageBackAsk").value);
-localStorage.setItem("topBarColorMax",document.getElementById("topBarColorMaxAsk").value );
-localStorage.setItem("topBarColorMin", document.getElementById("topBarColorMinAsk").value);
-*/
-
-
-
+  chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+     
+     themeNumBM = request.themeNum
+      
+    }
+  );
+},1000)
 
 /*
 
@@ -79,12 +55,15 @@ alert("Dale click al icon del chrome extension to create your own theme!!!")
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  var link = document.getElementById('');
+  // onClick's logic below:
+  link.addEventListener('click', function() {
 
 
-
-/*
-
-var themeArray = localStorage.getItem("themeArray")
+  })
+})
+var themeArray = localStorage.getItem("themeArray"+ themeNumBM.toString())
 var themeArray = themeArray.split(",")
 
 
@@ -93,35 +72,27 @@ var backgroundImageBackLs = themeArray[1]
 var topBarColorMaxLs = themeArray[2]
 var topBarColorMinLS = themeArray[3]
 
-
+setInterval(function(){ 
 var backgroundColorFront = document.getElementsByClassName('single-column-layout')[0];
 backgroundColorFront.style.setProperty ('background-color', backgroundColorFrontLs, 'important');
 //#28359d
 
  var backgroundImageBack = document.getElementById('section1-wrapper');
  backgroundImageBack.style.setProperty ('background-image', 'url('+backgroundImageBackLs+ ')', 'important');
+ backgroundImageBack.style.setProperty ('background-repeat', 'no-repeat', 'important');
+ backgroundImageBack.style.setProperty ('background-size', 'cover', 'important');
+ 
 //https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg
  let topBarColorMax = document.getElementsByClassName('screen-width')[0];
  topBarColorMax.style.setProperty ('background-color', topBarColorMaxLs, 'important');
 //black
+
  let topBarColorMin = document.getElementsByClassName('screen-width')[0];
  topBarColorMin.style.setProperty ('border-bottom-color', topBarColorMinLS, 'important');
 //#e137dc
+
 backgroundColorFront.style.setProperty ('border-color', topBarColorMinLS, 'important');
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
+},1);
 
 //themeArray = #28359d,https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg,#000000,#e137dc
  
