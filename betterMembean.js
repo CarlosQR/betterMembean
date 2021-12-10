@@ -31,7 +31,7 @@ setInterval(function(){
     function(request, sender, sendResponse) {
      
      themeNumBM = request.themeNum
-      
+      console.log(themeNumBM)
     }
   );
 },1000)
@@ -63,16 +63,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   })
 })
-var themeArray = localStorage.getItem("themeArray"+ themeNumBM.toString())
-var themeArray = themeArray.split(",")
 
+
+setInterval(function(){ 
+  
+var themeArray = localStorage.getItem("themeArray" + themeNumBM)
+themeArray = themeArray.split(",")
+console.log(themeNumBM)
+console.log(themeArray)
+//+ themeNumBM.toString()
 
 var backgroundColorFrontLs= themeArray[0]
 var backgroundImageBackLs = themeArray[1]
 var topBarColorMaxLs = themeArray[2]
 var topBarColorMinLS = themeArray[3]
-
-setInterval(function(){ 
 var backgroundColorFront = document.getElementsByClassName('single-column-layout')[0];
 backgroundColorFront.style.setProperty ('background-color', backgroundColorFrontLs, 'important');
 //#28359d
@@ -92,7 +96,7 @@ backgroundColorFront.style.setProperty ('background-color', backgroundColorFront
 //#e137dc
 
 backgroundColorFront.style.setProperty ('border-color', topBarColorMinLS, 'important');
-},1);
+},10);
 
 //themeArray = #28359d,https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg,#000000,#e137dc
  

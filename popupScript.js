@@ -8,13 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  var link3 = document.getElementById('test');
-  // onClick's logic below:
-  link3.addEventListener('click', function() {
-    console.log("bruh")
-  });
-});
+
 
 
 var themePfp 
@@ -25,7 +19,7 @@ for (let i = 1; i <= themeNum; i++){
   themePfp = localStorage.getItem("themePfp" + i);
   console.log("themePfp" + i)
   
-  theme = theme + "<img id='"+i+"' style='border: 0.5px solid white; background-repeat: no repeat 'width ='80px' heigth = '45px' src = '" + themePfp+ "'>"
+  theme = theme + "<img id='"+i+"' style='border: 0.5px solid white; background-repeat: no repeat;position: sticky'width ='80px' heigth = '45px' src = '" + themePfp+ "'>"
   console.log(themePfp)
   console.log(i)
   
@@ -60,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, {themeNum: "1"}, function(response) {
+          document.getElementById('1').style.borderWidth = "2px 2px"
+          document.getElementById('2').style.borderWidth = "0.5px 0.5px"
+         
           });});
 
   });
@@ -77,6 +74,8 @@ console.log("Like como q funcione souu 2")
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {themeNum: "2"}, function(response) {
+        document.getElementById('2').style.borderWidth = "2px 2px"
+        document.getElementById('1').style.borderWidth = "0.5px 0.5px"
         });});
 
 });
