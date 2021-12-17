@@ -1,6 +1,6 @@
 # Better Membean by Carlos Quiñones
 
-This extension applies a theme to your membean sessions.
+This extension applies a theme to your membean sessions.<br/>
 Basic Information:
 
 1.Only use the extension once you are in a membean session or on the screen that lets you chose the length of your session. <br /> 
