@@ -1,4 +1,4 @@
-# Better Membean por Carlos Quiñones
+# Better Membean by Carlos Quiñones
 
 This extension applies a theme to your membean sessions.
 
