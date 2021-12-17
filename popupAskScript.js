@@ -1,3 +1,63 @@
+var j;
+var currentEdit = localStorage.getItem("themeEdit")
+
+ if(currentEdit == 0){
+
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var link = document.getElementById('submit');
+    // onClick's logic below:
+    link.addEventListener('click', function() {
+console.log("mhmhm")
+      if(localStorage.getItem("themeNum")!==null){
+        var themNum = localStorage.getItem("themeNum")
+        themNum =parseInt(themNum)+1
+        localStorage.setItem("themeNum",themNum)
+
+
+      }else{
+        localStorage.setItem("themeNum",1)
+        var themNum = localStorage.getItem("themeNum")
+
+
+      }
+localStorage.setItem("themePfp"+themNum,document.getElementById("backgroundImageBackAsk").value)
+  
+  console.log("funciona")
+ 
+  //var themeArray = [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value]
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {themeArray: [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value,themNum.toString(),0]}, function(response) {
+          });});
+          
+    });
+  });
+  
+        
+  
+
+
+ }else{
+
+var themePfp = localStorage.getItem("themePfp" + currentEdit.toString())
+backgroundImageBackAsk.value = themePfp
+document.addEventListener('DOMContentLoaded', function() {
+  var link = document.getElementById('submit');
+  // onClick's logic below:
+  link.addEventListener('click', function() {
+
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, {themeArray: [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value,currentEdit,currentEdit]}, function(response) {
+        });});
+
+
+  })})
+
+  
+ }
+
+
+
 
   /*
 localStorage.setItem("backgroundColorFront",document.getElementById("backgroundColorFrontAsk").value);
@@ -36,37 +96,6 @@ document.getElementById("themePfp").src= localStorage.getItem("backgroundImageBa
 */
 
 
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    var link = document.getElementById('submit');
-    // onClick's logic below:
-    link.addEventListener('click', function() {
-console.log("mhmhm")
-      if(localStorage.getItem("themeNum")!==null){
-        var themNum = localStorage.getItem("themeNum")
-        themNum =parseInt(themNum)+1
-        localStorage.setItem("themeNum",themNum)
-
-
-      }else{
-        localStorage.setItem("themeNum",1)
-        var themNum = localStorage.getItem("themeNum")
-
-
-      }
-localStorage.setItem("themePfp"+themNum,document.getElementById("backgroundImageBackAsk").value)
-  
-  console.log("funciona")
-  //var themeArray = [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value]
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {themeArray: [document.getElementById("backgroundColorFrontAsk").value,document.getElementById("backgroundImageBackAsk").value,document.getElementById("topBarColorMaxAsk").value,document.getElementById("topBarColorMinAsk").value,themNum.toString()]}, function(response) {
-          });});
-          
-    });
-  });
-  
-        
-  
   
         
   

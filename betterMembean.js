@@ -4,7 +4,8 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     sendResponse({respond: "ummmm"});
     
-
+var requestArr = request.themeArray
+if(requestArr[5] == 0 ){
     localStorage.setItem("themeArray",request.themeArray);
     var themeArrayLS = localStorage.getItem("themeArray");
     themeArrayLS = themeArrayLS.split(",")
@@ -16,7 +17,14 @@ localStorage.setItem("themeArray"+ numLS,request.themeArray);
 
   
     
+  }else{
+    localStorage.setItem("themeArray" +requestArr[5].toString() ,request.themeArray);
+
+
+
+
   }
+}
 
 
 );
@@ -66,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 setInterval(function(){ 
-  
+
 var themeArray = localStorage.getItem("themeArray" + themeNumBM)
 themeArray = themeArray.split(",")
 console.log(themeNumBM)
@@ -96,6 +104,15 @@ backgroundColorFront.style.setProperty ('background-color', backgroundColorFront
 //#e137dc
 
 backgroundColorFront.style.setProperty ('border-color', topBarColorMinLS, 'important');
+//transparancy
+
+//document.getElementsByClassName("single-column-layout")[0].style.setProperty ('opacity', 0.5, 'important');
+
+
+
+
+//console.log(document.getElementsByClassName("single-column-layout")[0])
+
 },10);
 
 //themeArray = #28359d,https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg,#000000,#e137dc
@@ -119,4 +136,13 @@ background-image: "url(https://digitaladdictsblog.com/wp-content/uploads/2019/01
  style= "background-image: 'url(https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg'"
  https://digitaladdictsblog.com/wp-content/uploads/2019/01/shutterstock_295846730-702x459.jpg
 
+
+
+ideas for wallpaper:
+
+
+https://2.bp.blogspot.com/-WadwbPhkoXw/XRw3rFwtvmI/AAAAAAAAH9I/3BhK4fPb8WgYA7yKUqmGiqxgZwW54LUjgCKgBGAs/w250-h170-c-w1366-h768-c/tanjiro-kamado-kimetsu-no-yaiba-minimalist-uhdpaper.com-4K-143.jpg
+https://wallpapercave.com/wp/wp8322253.jpg
+
  */
+
