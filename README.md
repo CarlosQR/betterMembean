@@ -19,7 +19,8 @@ This extension applies a theme to your membean sessions.<br/>
 
 3.The Edit Theme button is found beside the Plus button and once clicked you will be put into edit mode, in which you can then click on the theme you want to edit.<br/>
 <img width=" 30px" heigth = "30px" src = "edit.png"><br/>
-4.Download the zip file to use!!
+4.Download the zip file to use!! : <br/>
+https://github.com/CarlosQR/betterMembean/blob/main/betterMembean.zip
 
 
 # Warning
@@ -30,4 +31,5 @@ The extension will work while on this page, editing or creating themes should be
 1.Go to chrome://extensions/<br /> 
 2.On the top left click Load Unpacked <br /> 
 3.And choose the unziped folder of the extension
+
 
