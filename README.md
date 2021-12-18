@@ -1,4 +1,5 @@
 # Better Membean by Carlos Quiñones
+<img src = "images/icon.png">
 
 This extension applies a theme to your membean sessions.<br/>
 
