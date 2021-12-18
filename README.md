@@ -22,6 +22,8 @@ This extension applies a theme to your membean sessions.<br/>
 4.Download the zip file to use!!
 
 
+# Warning
+<img width=" 30px" heigth = "30px" src = "https://github.com/CarlosQR/betterMembean/blob/main/images/Icon.PNG"><br/>
 # How to Load a Chomre Extension:
 
 1.Go to chrome://extensions/<br /> 
