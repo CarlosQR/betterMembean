@@ -1,5 +1,5 @@
-# Better Membean by Carlos Quiñones
-<img src = "images/Icon.png">
+<img src = "https://github.com/CarlosQR/betterMembean/blob/main/images/Icon.PNG"># Better Membean by Carlos Quiñones
+
 
 This extension applies a theme to your membean sessions.<br/>
 
