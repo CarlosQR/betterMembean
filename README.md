@@ -3,9 +3,9 @@
 
 This extension applies a theme to your membean sessions.<br/>
 
-# Example
+# Examples
 
-<img width=" 500px" heigth = "2500px" src = "https://github.com/CarlosQR/betterMembean/blob/main/example.PNG"><br/>
+<img width=" 500px" heigth = "2500px" src = "https://github.com/CarlosQR/betterMembean/blob/main/example.PNG"> <img width=" 500px" heigth = "2500px" src = "https://github.com/CarlosQR/betterMembean/blob/main/example2.PNG"><br/>
 
 # Basic Information:
 
