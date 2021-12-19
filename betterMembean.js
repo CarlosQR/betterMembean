@@ -75,6 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 setInterval(function(){ 
 
+localStorage.setItem("themeNum", themeNumBM)
+var lastTheme = localStorage.getItem("themeNum")
+lastTheme = lastTheme.toString()
+localStorage.setItem("themeArray",localStorage.getItem("themeArray" + lastTheme) )
+
 var themeArray = localStorage.getItem("themeArray" + themeNumBM)
 themeArray = themeArray.split(",")
 console.log(themeNumBM)
@@ -112,6 +117,8 @@ backgroundColorFront.style.setProperty ('border-color', topBarColorMinLS, 'impor
 
 
 //console.log(document.getElementsByClassName("single-column-layout")[0])
+
+
 
 },10);
 
