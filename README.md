@@ -24,7 +24,7 @@ https://github.com/CarlosQR/betterMembean/blob/main/betterMembean.zip
 
 
 # Warning
-The extension will work while on this page, editing or creating themes should be done while here or else problems will arise
+The extension will work while on this page, editing or creating themes should be done while here or else problems may arise<br/>
 <img width=" 500px" heigth = "2500px" src = "https://github.com/CarlosQR/betterMembean/blob/main/images/Training.PNG"><br/>
 # How to Load a Chomre Extension:
 
