@@ -90,8 +90,14 @@ var backgroundColorFrontLs= themeArray[0]
 var backgroundImageBackLs = themeArray[1]
 var topBarColorMaxLs = themeArray[2]
 var topBarColorMinLS = themeArray[3]
+
 var backgroundColorFront = document.getElementsByClassName('single-column-layout')[0];
 backgroundColorFront.style.setProperty ('background-color', backgroundColorFrontLs, 'important');
+
+document.getElementsByClassName('single-column-layout')[0].style.setProperty ('visibility', 'hidden', 'important');
+
+document.getElementById('single-question').style.setProperty ('visibility', 'visible', 'important');
+
 //#28359d
 
  var backgroundImageBack = document.getElementById('section1-wrapper');
